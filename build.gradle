@@ -1,11 +1,15 @@
 
+plugins {
+	id 'java'
+}
 allprojects {
-	group = 'com.dasu'
-	version = '1.0.0'
-
-	repositories {
-		mavenCentral()
-	}
+	group = 'com.dasus'
+	version = '1.0-SNAPSHOT'
+	sourceCompatibility = '24' // 자바 버전 설정
+}
+dependencies {
+	implementation project(':common')
+	implementation project(':gateway')
 }
 
 subprojects {
