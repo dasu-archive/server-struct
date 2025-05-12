@@ -1,0 +1,35 @@
+
+
+server:
+  port: 8080
+
+jwt:
+  secret: myfirstsecretrandomvariables
+
+
+spring:
+
+  ### DB 설정 ###
+  datasource:
+    url: jdbc:mariadb://127.0.0.1:3306/dasu
+    username: root
+    password: root
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MariaDBDialect
+
+  ### Gateway 설정
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: user-service
+            uri: http://localhost:8090
+            predicates:
+              - path=/api/user/**
+            filters:
+              - AddRequestsHeader=From-Gateway, true

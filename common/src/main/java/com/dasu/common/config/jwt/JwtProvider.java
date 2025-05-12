@@ -1,4 +1,4 @@
-package com.dasu.jwt;
+package com.dasu.common.config.jwt;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTCreator;

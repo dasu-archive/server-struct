@@ -8,11 +8,29 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.38/57f8f5e02e92a30fd21b80cbd426a4172b5f8e29/lombok-1.18.38.jar" />
         </processorPath>
         <module name="Dasu.gateway.main" />
+        <module name="Dasu.authentication.main" />
+        <module name="Dasu.common.main" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="common" target="24" />
+      <module name="common.main" target="24" />
+      <module name="common.test" target="24" />
+      <module name="Dasu.main" target="24" />
+      <module name="Dasu.test" target="24" />
+      <module name="gateway" target="24" />
+      <module name="gateway.main" target="24" />
+      <module name="gateway.test" target="24" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Dasu.authentication" options="-parameters" />
+      <module name="Dasu.authentication.main" options="-parameters" />
+      <module name="Dasu.authentication.test" options="-parameters" />
+      <module name="Dasu.common" options="-parameters" />
+      <module name="Dasu.common.main" options="-parameters" />
+      <module name="Dasu.common.test" options="-parameters" />
       <module name="Dasu.gateway" options="-parameters" />
       <module name="Dasu.gateway.main" options="-parameters" />
       <module name="Dasu.gateway.test" options="-parameters" />

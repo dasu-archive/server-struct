@@ -1,4 +1,3 @@
 rootProject.name = 'Dasu'
 
-include ':common'
-include ':gateway'
+include 'common', 'gateway', 'authentication'

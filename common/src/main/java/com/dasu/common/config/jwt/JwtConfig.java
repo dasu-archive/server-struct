@@ -1,4 +1,4 @@
-package com.dasu.jwt;
+package com.dasu.common.config.jwt;
 
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableConfigurationProperties(JwtProperties.class)
-public class JwtAutoConfiguration {
+public class JwtConfig {
 
     @Bean
     @ConditionalOnMissingBean
