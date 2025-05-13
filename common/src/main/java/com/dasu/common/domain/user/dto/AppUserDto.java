@@ -6,7 +6,7 @@ import lombok.Setter;
 public class AppUserDto {
 
     @Getter
-    public class SignInRequest{
+    public static class SignInRequest{
         private String email;
         private String password;
     }

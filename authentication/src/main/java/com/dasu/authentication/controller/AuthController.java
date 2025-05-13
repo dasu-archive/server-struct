@@ -4,10 +4,7 @@ package com.dasu.authentication.controller;
 import com.dasu.common.domain.user.dto.AppUserDto;
 import com.dasu.common.domain.user.service.AppUserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/user/auth")
@@ -18,9 +15,15 @@ public class AuthController {
 
     @PostMapping("/sign-in")
     public String signIn(@RequestBody AppUserDto.SignInRequest request) {
+        System.out.println("signRequest");
         return appUserService.signIn(request.getEmail(), request.getPassword());
     }
 
+    @GetMapping("/sign-in")
+    public String signIn() {
+        System.out.println("GetsignRequest");
+        return "ok";
+    }
 //    @PostMapping("/refresh")
 //    public String refresh(@RequestParam String token) {
 //

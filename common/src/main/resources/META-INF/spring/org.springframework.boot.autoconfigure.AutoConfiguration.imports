@@ -1,3 +1,4 @@
-com.dasu.common.domain.user.AppUserAutoConfiguration
+com.dasu.common.domain.user.AppUserConfig
 com.dasu.common.config.jwt.JwtConfig
-com.dasu.common.config.security.SecurityConfig
+com.dasu.common.config.security.ServletSecurityConfig
+com.dasu.common.config.security.WebfluxSecurityConfig

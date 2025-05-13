@@ -1,4 +1,4 @@
-package com.dasu.common.config.security.service;
+package com.dasu.common.config.security.servlet.service;
 
 
 import com.dasu.common.domain.user.entity.AppUser;

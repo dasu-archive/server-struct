@@ -10,5 +10,5 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan("com.dasu.common.domain.user")
 @EntityScan("com.dasu.common.domain.user.entity")
 @EnableJpaRepositories("com.dasu.common.domain.user.repository")
-public class AppUserAutoConfiguration {
+public class AppUserConfig {
 }

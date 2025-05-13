@@ -34,6 +34,9 @@
       <module name="Dasu.gateway" options="-parameters" />
       <module name="Dasu.gateway.main" options="-parameters" />
       <module name="Dasu.gateway.test" options="-parameters" />
+      <module name="Dasu.monitoring" options="-parameters" />
+      <module name="Dasu.monitoring.main" options="-parameters" />
+      <module name="Dasu.monitoring.test" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="gateway.main" options="-parameters" />
       <module name="gateway.test" options="-parameters" />
