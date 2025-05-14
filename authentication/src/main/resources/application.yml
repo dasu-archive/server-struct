@@ -21,12 +21,17 @@ spring:
     database-platform: org.hibernate.dialect.MariaDBDialect
 
   ### Monitoring
-  boot:
-    admin:
-      client:
-        url: http://localhost:8081
+#  boot:
+#    admin:
+#      client:
+#        url: http://localhost:8081
   application:
     name: authentication-server
 
 jwt:
   secret: myfirstsecretrandomvariables
+  expiration-millis: 36000000
+
+logging:
+  level:
+    org.springframework.security: DEBUG

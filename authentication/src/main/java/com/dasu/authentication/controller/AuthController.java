@@ -19,6 +19,17 @@ public class AuthController {
         return appUserService.signIn(request.getEmail(), request.getPassword());
     }
 
+    @PostMapping("/sign-up")
+    public String signup(@RequestBody AppUserDto.SignInRequest request) {
+        System.out.println("signRequest");
+        if(appUserService.signUp(request.getEmail(), request.getPassword())){
+            return "ok";
+        }else{
+            return "fail";
+        }
+    }
+
+
     @GetMapping("/sign-in")
     public String signIn() {
         System.out.println("GetsignRequest");

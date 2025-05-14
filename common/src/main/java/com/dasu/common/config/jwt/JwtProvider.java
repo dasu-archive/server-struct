@@ -14,11 +14,13 @@ public class JwtProvider {
     private final String secret;
     private final Long expirationMillis;
     private final Algorithm algorithm;
+    private final JWTVerifier verifier;
 
     public JwtProvider(String secret, Long expirationMillis) {
         this.secret = secret;
         this.expirationMillis = expirationMillis;
         this.algorithm = Algorithm.HMAC256(secret);
+        this.verifier = JWT.require(algorithm).build();
 
     }
 
@@ -37,13 +39,26 @@ public class JwtProvider {
 
     }
 
-    public DecodedJWT verifyToken(String token) {
-        JWTVerifier verifier = JWT.require(this.algorithm).build();
-        return verifier.verify(token); // 예외 발생 시 검증 실패
+
+    public boolean validateToken(String token) {
+        if(token == null || token.isEmpty() || !token.startsWith("Bearer ")) {
+            return false;
+        }
+        verifier.verify(deleteBearerToken(token));
+        return true;
+    }
+    public String getSubject(String token) {
+        return verifier.verify(deleteBearerToken(token)).getSubject();
     }
 
-    public String getSubject(String token) {
-        return verifyToken(token).getSubject();
+    private String deleteBearerToken(String token) {
+        return token.substring(7);
     }
+
+    public DecodedJWT getDecodeJwt(String token) {
+        return verifier.verify(deleteBearerToken(token));
+    }
+
+
 
 }
