@@ -2,5 +2,7 @@ spring:
   application:
     name: monitoring
 
+  main:
+    web-application-type: servlet
 server:
   port: 8081

@@ -8,6 +8,8 @@ management:
       exposure:
         include: "*"
 spring:
+  main:
+    web-application-type: servlet
   datasource:
     url: jdbc:mariadb://127.0.0.1:3306/dasu
     username: root

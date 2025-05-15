@@ -48,7 +48,11 @@ public class JwtProvider {
         return true;
     }
     public String getSubject(String token) {
-        return verifier.verify(deleteBearerToken(token)).getSubject();
+        if(token.startsWith("Bearer ")) {
+            return verifier.verify(deleteBearerToken(token)).getSubject();
+        }else{
+            return verifier.verify(token).getSubject();
+        }
     }
 
     private String deleteBearerToken(String token) {

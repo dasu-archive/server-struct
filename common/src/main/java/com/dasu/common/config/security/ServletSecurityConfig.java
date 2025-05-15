@@ -3,7 +3,6 @@ package com.dasu.common.config.security;
 
 import com.dasu.common.config.jwt.JwtProvider;
 import com.dasu.common.config.security.servlet.filter.JwtAuthenticationFilter;
-import com.dasu.common.config.security.servlet.service.AppUserDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Bean;
